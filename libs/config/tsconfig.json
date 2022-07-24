@@ -23,7 +23,6 @@
     // Prevent emitting by default
     "noEmit": true,
     "allowJs": false,
-    "incremental": true,
     "skipLibCheck": true,
     "isolatedModules": true,
     // Errors without truncation sometimes can be very dirty
@@ -31,6 +30,7 @@
     "importsNotUsedAsValues": "error",
     "importHelpers": true,
     "sourceMap": false,
+    // "incremental": true,
 
     // Other
 

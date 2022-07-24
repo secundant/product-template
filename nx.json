@@ -20,7 +20,11 @@
       }
     }
   },
-  "targetDefaults": {},
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  },
   "affected": {
     "defaultBase": "main"
   },

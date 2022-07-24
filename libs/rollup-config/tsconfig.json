@@ -1,0 +1,11 @@
+{
+  "extends": "@my-org/config/tsconfig.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "baseUrl": "src-1",
+    "rootDir": ".",
+    "incremental": false
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@my-org/rollup-config",
+  "packageManager": "yarn@3.2.0",
+  "version": "0.0.1",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "module": "dist/index.mjs",
+  "jsnext:main": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "version": "yarn version",
+    "clean": "yarn dlx rimraf dist",
+    "build": "rollup -c",
+    "lint": "eslint"
+  },
+  "peerDependencies": {
+    "@swc/helpers": "0.4.3",
+    "rollup": "2.77.0"
+  },
+  "devDependencies": {
+    "@my-org/config": "workspace:*",
+    "@swc/helpers": "0.4.3",
+    "@types/node": "18.0.6",
+    "eslint": "8.20.0",
+    "eslint-kit": "5.10.0",
+    "rollup": "2.77.0",
+    "rollup-plugin-import-assertions": "0.3.0",
+    "rollup-plugin-typescript2": "0.32.1"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "4.2.1",
+    "@swc/core": "1.2.218",
+    "chalk": "5.0.1",
+    "maxmin": "4.0.0",
+    "rollup-plugin-dts": "4.2.2"
+  }
+}
