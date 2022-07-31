@@ -2,9 +2,9 @@
   "extends": "@my-org/config/tsconfig.json",
   "compilerOptions": {
     "types": ["node"],
-    "baseUrl": "src-1",
+    "baseUrl": "src",
     "rootDir": ".",
-    "incremental": false
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]

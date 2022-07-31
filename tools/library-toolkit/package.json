@@ -1,5 +1,5 @@
 {
-  "name": "@my-org/rollup-config",
+  "name": "@my-org/library-toolkit",
   "packageManager": "yarn@3.2.0",
   "version": "0.0.1",
   "main": "dist/index.cjs",
@@ -13,6 +13,9 @@
       "default": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
+  },
+  "bin": {
+    "library": "dist/bin.mjs"
   },
   "files": [
     "index.js",
@@ -32,18 +35,19 @@
   "devDependencies": {
     "@my-org/config": "workspace:*",
     "@swc/helpers": "0.4.3",
-    "@types/node": "18.0.6",
+    "@types/node": "18.6.3",
     "eslint": "8.20.0",
-    "eslint-kit": "5.10.0",
-    "rollup": "2.77.0",
+    "eslint-kit": "6.1.1",
+    "rollup": "2.77.2",
     "rollup-plugin-import-assertions": "0.3.0",
     "rollup-plugin-typescript2": "0.32.1"
   },
   "dependencies": {
     "@rollup/pluginutils": "4.2.1",
-    "@swc/core": "1.2.218",
+    "@swc/core": "1.2.220",
     "chalk": "5.0.1",
     "maxmin": "4.0.0",
-    "rollup-plugin-dts": "4.2.2"
+    "rollup-plugin-dts": "4.2.2",
+    "sade": "1.8.1"
   }
 }

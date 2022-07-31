@@ -1,16 +1,28 @@
-# @my-org/rollup-config
+# @my-org/library-toolkit
+
+Toolkit for libraries development. Supports multiple library types
 
 ```shell
 yarn add -D rollup @swc/helpers @my-org/rollup-config
 ```
 
+## Concepts
+
+### Library types
+
+- `default` - build all source to single file, single entry point -> single output.
+  Useful for NodeJs-oriented/CLI, configs, regular small isolated libraries, etc.
+- ``
+
 ## Usage
+
+####
 
 ### Add rollup config
 
 ```javascript
 // rollup.config.js
-const { createRollupLibraryConfig } = require('@my-org/rollup-config');
+const { createRollupLibraryConfig } = require('@my-org/library-toolkit');
 
 module.exports = createRollupLibraryConfig();
 ```
@@ -40,4 +52,5 @@ module.exports = createRollupLibraryConfig();
 
 ## Troubles
 
-- [ ] Support typescript paths
+- [x] Support typescript paths
+- [ ] Support multiple entries

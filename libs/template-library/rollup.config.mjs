@@ -1,3 +1,3 @@
-import { createRollupLibraryConfig } from '@my-org/rollup-config';
+import { createRollupLibraryConfig } from 'tools/library-toolkit';
 
 export default createRollupLibraryConfig();

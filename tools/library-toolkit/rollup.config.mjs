@@ -13,12 +13,20 @@ export default defineConfig([
     external,
     output: [
       {
-        file: pkg.main,
-        format: 'cjs'
-      },
-      {
         file: pkg.module,
         format: 'es'
+      }
+    ],
+    plugins: [importAssertions(), typescript()]
+  }),
+  defineConfig({
+    input: 'src/bin.ts',
+    external,
+    output: [
+      {
+        file: 'dist/bin.mjs',
+        format: 'esm',
+        banner: '#!/usr/bin/env node\n'
       }
     ],
     plugins: [importAssertions(), typescript()]
