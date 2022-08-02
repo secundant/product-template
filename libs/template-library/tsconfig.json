@@ -1,6 +1,7 @@
 {
   "extends": "@my-org/config/tsconfig.json",
   "compilerOptions": {
+    "importHelpers": true,
     "baseUrl": "src",
     "rootDir": ".",
     "paths": {

@@ -1,1 +1,1 @@
-export { createRollupConfig } from './rollup/create-rollup-config';
+export { createRollupContext } from './rollup/create-rollup-context';

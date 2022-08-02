@@ -2,23 +2,11 @@
   "name": "@my-org/library-toolkit",
   "packageManager": "yarn@3.2.0",
   "version": "0.0.1",
-  "main": "dist/index.cjs",
-  "types": "dist/index.d.ts",
-  "source": "src/index.ts",
-  "module": "dist/index.mjs",
-  "jsnext:main": "dist/index.mjs",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
   "bin": {
     "library": "dist/bin.mjs"
   },
   "files": [
-    "index.js",
+    "dist",
     "README.md"
   ],
   "sideEffects": false,

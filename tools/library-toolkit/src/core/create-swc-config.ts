@@ -1,11 +1,17 @@
 import type { Options } from '@swc/core';
 import type { ProjectConfiguration } from './create-project-configuration';
 
-export function createSwcConfig({ cwd, tsconfig, deps }: ProjectConfiguration): Options {
+export function createSwcConfig({
+  cwd,
+  tsconfig,
+  deps,
+  settings: { sourceMap }
+}: ProjectConfiguration): Options {
   const jsx = deps.production.includes('react');
 
   return {
     cwd,
+    sourceMaps: sourceMap,
     jsc: tsconfig
       ? {
           parser: {

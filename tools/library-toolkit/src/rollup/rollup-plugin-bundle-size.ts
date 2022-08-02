@@ -3,6 +3,7 @@ import chalk from 'chalk';
 import maxmin from 'maxmin';
 import { basename } from 'node:path';
 import type { Plugin } from 'rollup';
+import { stdout } from '../core/logger';
 
 export function rollupPluginBundleSize(): Plugin {
   return {
@@ -15,7 +16,7 @@ export function rollupPluginBundleSize(): Plugin {
       if (info.type !== 'chunk') return;
       const size = maxmin(info.code, info.code, true);
 
-      console.log(`Created bundle ${chalk.cyan(asset)}: ${size.slice(size.indexOf(' → ') + 3)}`);
+      stdout(`Compiled ${chalk.cyan(file)}: ${size.slice(size.indexOf(' → ') + 3)}`);
     }
   };
 }
