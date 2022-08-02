@@ -1,5 +1,5 @@
 import sade from 'sade';
-import { build } from './build';
+import { build, watch } from './build';
 import { createProjectConfiguration } from './core/create-project-configuration';
 
 sade('library')
@@ -10,5 +10,9 @@ sade('library')
     await build(configuration);
   })
   .command('watch')
-  .action(() => {})
+  .action(async () => {
+    const configuration = await createProjectConfiguration(process.cwd(), 'development');
+
+    watch(configuration);
+  })
   .parse(process.argv);

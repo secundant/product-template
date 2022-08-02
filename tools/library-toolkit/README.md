@@ -73,5 +73,5 @@ Will be helpful for customization your flow.
 
 - [x] Support typescript paths
 - [ ] Support multiple entries
-- [ ] Development mode
+- [x] Development mode
 - [ ] Transpile mode with multiple destination (see @mui/material)
