@@ -71,6 +71,7 @@ export interface ProjectConfiguration {
 
 // Contains only required parts of tsconfig
 export interface PartialTSConfig {
+  // TODO Override target with keyof ScriptTarget
   compilerOptions: CompilerOptions;
   include?: string[];
   exclude?: string[];

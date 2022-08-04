@@ -1,4 +1,4 @@
-import type { Options } from '@swc/core';
+import type { JscTarget, Options } from '@swc/core';
 import type { ProjectConfiguration } from './create-project-configuration';
 
 export function createSwcConfig({
@@ -21,6 +21,10 @@ export function createSwcConfig({
             dynamicImport: true
           },
           externalHelpers: tsconfig.compilerOptions.importHelpers,
+          // TODO Add mapping "compilerOptions.target" -> "jsc.target"
+          target: (
+            tsconfig.compilerOptions.target as string | undefined
+          )?.toLowerCase() as JscTarget,
           baseUrl: tsconfig.compilerOptions.baseUrl,
           paths: tsconfig.compilerOptions.paths
             ? Object.fromEntries(
