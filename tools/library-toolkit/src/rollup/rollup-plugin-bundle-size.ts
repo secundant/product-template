@@ -3,9 +3,11 @@ import chalk from 'chalk';
 import maxmin from 'maxmin';
 import { basename } from 'node:path';
 import type { Plugin } from 'rollup';
-import { stdout } from '../core/logger';
+import { logger } from '../core/logger';
 
 export function rollupPluginBundleSize(): Plugin {
+  let time = Date.now();
+
   return {
     name: 'rollup-plugin-bundle-size',
     generateBundle({ file }, bundle) {
@@ -16,7 +18,13 @@ export function rollupPluginBundleSize(): Plugin {
       if (info.type !== 'chunk') return;
       const size = maxmin(info.code, info.code, true);
 
-      stdout(`Compiled ${chalk.cyan(file)}: ${size.slice(size.indexOf(' → ') + 3)}`);
+      logger.info(`Compiled ${chalk.cyan(file)}`, `${size.slice(size.indexOf(' → ') + 3)}`);
+    },
+    buildStart() {
+      time = Date.now();
+    },
+    closeBundle() {
+      logger.info(`Compiled at`, `${Date.now() - time}ms`);
     }
   };
 }

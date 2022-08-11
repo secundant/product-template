@@ -6,13 +6,12 @@ const depsList = Object.keys({ ...pkg.dependencies, ...pkg.peerDependencies });
 const external = id => depsList.includes(id) || id.startsWith('node:');
 
 export default {
-  input: 'src/bin.ts',
+  input: 'src/index.ts',
   external,
   output: [
     {
-      file: 'dist/bin.mjs',
-      format: 'esm',
-      banner: '#!/usr/bin/env node\n'
+      file: 'dist/index.mjs',
+      format: 'esm'
     }
   ],
   plugins: [importAssertions(), typescript()]

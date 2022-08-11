@@ -2,10 +2,10 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import type { CompilerOptions } from 'typescript';
 
-export async function createProjectConfiguration(
+export async function createConfiguration(
   cwd: string,
   mode: BuildMode = 'production'
-): Promise<ProjectConfiguration> {
+): Promise<Configuration> {
   const tsconfigPath = resolve(cwd, 'tsconfig.json');
   const packagePath = resolve(cwd, 'package.json');
 
@@ -52,7 +52,7 @@ export async function createProjectConfiguration(
   };
 }
 
-export interface ProjectConfiguration {
+export interface Configuration {
   cwd: string;
   pkg: PartialPackageJson;
   mode: BuildMode;
@@ -78,6 +78,8 @@ export interface PartialTSConfig {
 }
 
 export interface PartialPackageJson {
+  name: string;
+  version: string;
   main?: string;
   types?: string;
   source?: string;

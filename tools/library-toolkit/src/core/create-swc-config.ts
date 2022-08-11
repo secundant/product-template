@@ -1,12 +1,12 @@
 import type { JscTarget, Options } from '@swc/core';
-import type { ProjectConfiguration } from './create-project-configuration';
+import type { Configuration } from './create-configuration';
 
 export function createSwcConfig({
   cwd,
   tsconfig,
   deps,
   settings: { sourceMap }
-}: ProjectConfiguration): Options {
+}: Configuration): Options {
   const jsx = deps.production.includes('react');
 
   return {

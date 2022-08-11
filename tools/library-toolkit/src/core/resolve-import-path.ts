@@ -29,15 +29,15 @@ export async function resolveImportPath(target: string, extensions: string[]) {
     return relativeFilePath;
   }
   const targetExists = await exists(target);
-  const stats = await stat(target);
+  const stats = targetExists ? await stat(target) : null;
   /**
    * If exists, just return
    * @example "./foo/bar.json" => "./foo/bar.json"
    */
-  if (targetExists && stats.isFile()) {
+  if (targetExists && stats?.isFile()) {
     return target;
   }
-  if (targetExists && stats.isDirectory()) {
+  if (targetExists && stats?.isDirectory()) {
     /**
      * If a directory, append it using index.<extension> to resolve
      * @example "./foo/bar" => "./foo/bar/index.ts"
