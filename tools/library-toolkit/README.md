@@ -69,9 +69,18 @@ Will be helpful for customization your flow.
   Useful for NodeJs-oriented/CLI, configs, regular small isolated libraries, etc.
 - `transpile` (in development) - works exactly as "tsc" - transpiles files to destination.
 
-## Troubles
+## Roadmap
 
-- [x] Support typescript paths
-- [ ] Support multiple entries
-- [x] Development mode
-- [ ] Transpile mode with multiple destination (see @mui/material)
+- [ ] Flexible build strategies
+  - [x] `standalone` - build single source entry into single output entry
+  - [ ] `public-api` - build multiple sources into multiple outputs.
+        All shared code will be grouped as dynamic generated chunks (ex. `dist/esm/__internal/utils-a241s.mjs`)
+  - [ ] `transpiled` - preserve sources structure, just transpile it to multiple targets
+- [ ] Builtin features
+  - [x] Support typescript paths
+  - [x] Development mode
+- [ ] Optional features
+  - [ ] CSS - Auto detect PostCSS, sass
+  - [ ] Babel - replace swc when .babelrc detected
+  - [ ] SWC - extend configuration when .swcrc detected
+  - [ ]

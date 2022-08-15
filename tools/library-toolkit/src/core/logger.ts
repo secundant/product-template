@@ -1,8 +1,19 @@
 import chalk from 'chalk';
 
 export const logger = {
-  info(name: string, ...messages: any[]) {
-    console.info(chalk.blue('info'), chalk.bold(`${name}: `), ...messages);
+  info(name: string, ...messages: unknown[]) {
+    console.info(
+      chalk.blue('info'),
+      chalk.bold(`${name}${messages.length > 0 ? ': ' : ''}`),
+      ...messages
+    );
+  },
+  warn(name: string, ...messages: unknown[]) {
+    console.warn(
+      chalk.blue('warn'),
+      chalk.bold(`${name}${messages.length > 0 ? ': ' : ''}`),
+      ...messages
+    );
   },
   stringify: {
     filesTree(files: string[], initialPrefix = '') {

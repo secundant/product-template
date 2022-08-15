@@ -23,6 +23,12 @@
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dependsOn": ["^build", "dev"]
+    },
+    "test": {
+      "dependsOn": ["typecheck", "^test"]
     }
   },
   "affected": {

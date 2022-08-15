@@ -33,6 +33,7 @@
     "rollup-plugin-typescript2": "0.32.1"
   },
   "dependencies": {
+    "@my-org/node-api": "workspace:*",
     "@rollup/pluginutils": "4.2.1",
     "@swc/core": "1.2.222",
     "chalk": "5.0.1",

@@ -69,6 +69,11 @@ export interface Configuration {
   };
 }
 
+export interface LibraryFeatures {
+  jsx?: boolean;
+  react?: boolean;
+}
+
 // Contains only required parts of tsconfig
 export interface PartialTSConfig {
   // TODO Override target with keyof ScriptTarget

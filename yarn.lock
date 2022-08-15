@@ -1021,6 +1021,7 @@ __metadata:
   resolution: "@my-org/library-toolkit@workspace:tools/library-toolkit"
   dependencies:
     "@my-org/config": "workspace:*"
+    "@my-org/node-api": "workspace:*"
     "@rollup/pluginutils": 4.2.1
     "@swc/core": 1.2.222
     "@swc/helpers": 0.4.3
@@ -1045,6 +1046,20 @@ __metadata:
 "@my-org/nextjs-app@workspace:apps/nextjs-app":
   version: 0.0.0-use.local
   resolution: "@my-org/nextjs-app@workspace:apps/nextjs-app"
+  languageName: unknown
+  linkType: soft
+
+"@my-org/node-api@workspace:*, @my-org/node-api@workspace:libs/node-api":
+  version: 0.0.0-use.local
+  resolution: "@my-org/node-api@workspace:libs/node-api"
+  dependencies:
+    "@my-org/config": "workspace:*"
+    "@my-org/library-toolkit": "workspace:*"
+    "@swc/helpers": 0.4.3
+    "@types/node": 18.7.2
+    eslint: 8.21.0
+    eslint-kit: 6.1.1
+    typescript: 4.7.4
   languageName: unknown
   linkType: soft
 
@@ -1656,6 +1671,13 @@ __metadata:
   version: 18.6.3
   resolution: "@types/node@npm:18.6.3"
   checksum: 38495b8fd27200d2b7ab9ccd8c1e2475d2411fba15330f2cba869a85ef79dd42382a2658c8dd298ace8c21ed3bfafcdea408faecd74928b144377d07d00e7c8c
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:18.7.2":
+  version: 18.7.2
+  resolution: "@types/node@npm:18.7.2"
+  checksum: 422cf95dea09959d0e809d24280b76948f60ea805e20d38f07bf9eeafeb413513b9cc365404766f7752bef9cafb8301a882d9d097f780e13f2bedf507459ebc5
   languageName: node
   linkType: hard
 
