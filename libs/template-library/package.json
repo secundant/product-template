@@ -29,7 +29,6 @@
     "@my-org/config": "workspace:*",
     "@my-org/library-toolkit": "workspace:*",
     "@swc/helpers": "0.4.3",
-    "@types/eslint": "^8.4.5",
     "eslint": "8.21.0",
     "eslint-kit": "6.1.1",
     "typescript": "4.7.4"
