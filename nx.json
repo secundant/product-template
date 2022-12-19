@@ -1,6 +1,9 @@
 {
-  "extends": "nx/presets/npm.json",
-  "npmScope": "your-org",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "my-org",
+  "affected": {
+    "defaultBase": "origin/main"
+  },
   "workspaceLayout": {
     "libsDir": "libs",
     "appsDir": "apps"
@@ -10,29 +13,31 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    "nx.json": "*"
+    "nx.json": "*",
+    ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "typecheck", "size"]
       }
     }
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["typecheck", "test", "lint", "^build"]
     },
     "dev": {
       "dependsOn": ["^build", "dev"]
     },
     "test": {
-      "dependsOn": ["typecheck", "^test"]
+      "dependsOn": ["typecheck", "^test"],
+      "inputs": ["default", "^default"]
+    },
+    "lint": {
+      "inputs": ["default"]
     }
-  },
-  "affected": {
-    "defaultBase": "main"
   },
   "pluginsConfig": {
     "@nrwl/js": {
