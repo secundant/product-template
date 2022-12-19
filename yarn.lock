@@ -2841,9 +2841,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@my-org/node-sdk@workspace:libs/node-sdk":
+"@my-org/std-node@workspace:libs/std-node":
   version: 0.0.0-use.local
-  resolution: "@my-org/node-sdk@workspace:libs/node-sdk"
+  resolution: "@my-org/std-node@workspace:libs/std-node"
+  dependencies:
+    "@my-org/std": "workspace:*"
+    "@neodx/libmake": 0.0.3
+    "@swc/helpers": 0.4.14
+    eslint: 8.30.0
+    eslint-kit: 6.10.0
+    typescript: 4.9.4
+  languageName: unknown
+  linkType: soft
+
+"@my-org/std@workspace:*, @my-org/std@workspace:libs/std":
+  version: 0.0.0-use.local
+  resolution: "@my-org/std@workspace:libs/std"
   dependencies:
     "@neodx/libmake": 0.0.3
     "@swc/helpers": 0.4.14

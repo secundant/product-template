@@ -15,3 +15,15 @@ export const assertPath = async (path: string, fn: (stats: Stats) => boolean) =>
   }
   return false;
 };
+
+export async function assertFile(path: string) {
+  if (!(await isFile(path))) {
+    throw new Error(`Path "${path}" expected to be a file, but it's not`);
+  }
+}
+
+export async function assertDir(path: string) {
+  if (!(await isDirectory(path))) {
+    throw new Error(`Path "${path}" expected to be a directory, but it's not`);
+  }
+}

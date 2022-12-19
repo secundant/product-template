@@ -10,7 +10,8 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@my-org/node-sdk": ["libs/node-sdk/index.ts"]
+      "@my-org/std": ["libs/std/index.ts"],
+      "@my-org/std-node": ["libs/std-node/index.ts"]
     },
     "strict": true,
     "noUnusedLocals": true,

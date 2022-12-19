@@ -1,9 +1,12 @@
 export {
-  ensureDirectory,
+  assertDir,
+  assertFile,
+  assertPath,
+  ensureDir,
   ensureFile,
   exists,
   isDirectory,
   isFile,
   readJsonFile,
   writeJsonFile
-} from './fs';
+} from './src/fs';
