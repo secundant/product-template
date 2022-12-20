@@ -17,6 +17,12 @@
     "nextjs",
     "nx"
   ],
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0 || >=18.0.0",
+    "yarn": ">=3.2.0",
+    "npm": "please-use-yarn"
+  },
+  "packageManager": "yarn@3.3.0",
   "workspaces": [
     "apps/*",
     "libs/*",
@@ -30,18 +36,13 @@
   "devDependencies": {
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
-    "@nrwl/workspace": "15.3.3",
     "husky": "8.0.2",
     "is-ci": "3.0.1",
     "lint-staged": "13.1.0",
     "nx": "15.3.3",
     "prettier": "2.8.1",
-    "typescript": "4.9.4"
-  },
-  "engines": {
-    "node": "^14.13.1 || >=16.0.0 || >=18.0.0",
-    "yarn": ">=3.2.0",
-    "npm": "please-use-yarn"
-  },
-  "packageManager": "yarn@3.3.0"
+    "typescript": "4.9.4",
+    "vite": "4.0.2",
+    "vite-tsconfig-paths": "4.0.3"
+  }
 }

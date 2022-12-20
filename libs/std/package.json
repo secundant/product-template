@@ -1,0 +1,27 @@
+{
+  "name": "@my-org/std",
+  "description": "Standard JS enhancements library",
+  "packageManager": "yarn@3.2.0",
+  "version": "0.0.1",
+  "source": "index.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "version": "yarn version",
+    "clean": "yarn dlx rimraf dist",
+    "build": "libmake",
+    "test": "vitest run",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@neodx/libmake": "0.0.3",
+    "@swc/helpers": "0.4.14",
+    "eslint": "8.30.0",
+    "eslint-kit": "6.10.0",
+    "typescript": "4.9.4",
+    "vitest": "0.26.1"
+  }
+}
