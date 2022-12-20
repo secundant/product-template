@@ -1,0 +1,18 @@
+---
+id: libraries.std
+tags:
+  - library
+  - library.main
+---
+
+# @my-org/std
+
+```jsx title="Simple usage"
+import { deduplicateAsync } from '@my-org/std';
+
+const fn = deduplicateAsync(async id => {
+  const res = await getData(id);
+
+  return { id, res };
+});
+```

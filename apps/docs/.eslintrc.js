@@ -7,6 +7,7 @@ module.exports = configure({
     rules: {
       // Docusaurus adds some external aliases with declare module "..."
       'import/no-unresolved': 'off'
-    }
+    },
+    ignorePatterns: ['!**/*', 'node_modules', '.docusaurus', 'build']
   }
 });

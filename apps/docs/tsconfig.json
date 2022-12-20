@@ -4,11 +4,8 @@
   "compilerOptions": {
     "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
     "allowJs": true,
-    "baseUrl": ".",
-    "jsx": "react-jsx",
-    "paths": {
-      "@site/*": ["./*"]
-    }
+    "allowSyntheticDefaultImports": true,
+    "noPropertyAccessFromIndexSignature": false
   },
   "include": ["src", "docs", "blog"]
 }
