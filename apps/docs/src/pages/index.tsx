@@ -19,7 +19,7 @@ export default function Home() {
         <HeroCardLink to="/docs/intro" label="Getting started">
           You're newcomer? Welcome!
         </HeroCardLink>
-        <HeroCardLink to="/docs/apps" label="Products">
+        <HeroCardLink to="/docs/product-template/intro" label="Projects">
           Here you can found documentation for your current project
         </HeroCardLink>
         <HeroCardLink to="/docs/libraries" label="Libraries">
