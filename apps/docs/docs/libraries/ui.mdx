@@ -1,0 +1,64 @@
+---
+id: libraries.ui
+tags:
+  - library
+---
+
+import { PackageManagersInstallSnippet } from '../../src/shared/ui';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# @my-org/ui
+
+Tailwind-based design system
+
+## Installation
+
+### Install tailwind and peer deps
+
+<PackageManagersInstallSnippet value="postcss autoprefixer tailwindcss" type="dev" />
+
+### Define tailwind configuration
+
+<Tabs>
+  <TabItem value="default" label="Default">
+
+```javascript title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+};
+```
+
+  </TabItem>
+  <TabItem value="monorepo" label="In monorepo">
+
+```javascript title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{ts,tsx}', '../../libs/ui/src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+};
+```
+
+  </TabItem>
+</Tabs>
+
+## Usage
+
+```jsx title="Simple usage"
+import { deduplicateAsync } from '@my-org/std';
+
+const fn = deduplicateAsync(async id => {
+  const res = await getData(id);
+
+  return { id, res };
+});
+```

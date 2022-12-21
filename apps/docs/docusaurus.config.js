@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '%my organization docs%',
+  title: 'My Organization',
   tagline: 'Knowledge base. Probably. Hm.',
   projectName: 'product-template',
   organizationName: 'secundant',
@@ -25,26 +25,39 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/secundant/product-template/apps/docs/docs/'
+          editUrl: 'https://github.com/secundant/product-template/tree/main/apps/docs/'
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/secundant/product-template/apps/docs/blog/'
+          editUrl: 'https://github.com/secundant/product-template/tree/main/apps/docs/'
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: require.resolve('./src/custom.css')
         }
       })
     ]
+  ],
+  plugins: [
+    async function tailwindConfig() {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        }
+      };
+    }
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '%my organization%',
+        title: 'My Organization',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg'
