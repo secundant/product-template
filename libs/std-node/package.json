@@ -10,7 +10,6 @@
   "sideEffects": false,
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "version": "yarn version",
     "clean": "yarn dlx rimraf dist",
     "build": "libmake",
     "lint": "eslint src"

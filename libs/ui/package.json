@@ -1,6 +1,6 @@
 {
-  "name": "@my-org/std",
-  "description": "Standard JS enhancements library",
+  "name": "@my-org/ui",
+  "description": "My organization design system",
   "packageManager": "yarn@3.2.0",
   "version": "0.0.1",
   "source": "index.ts",
@@ -13,14 +13,24 @@
     "clean": "yarn dlx rimraf dist",
     "build": "libmake",
     "test": "vitest run",
-    "lint": "eslint src"
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@swc/helpers": "0.4.14",
+    "class-variance-authority": "0.4.0"
   },
   "devDependencies": {
     "@neodx/libmake": "0.0.3",
-    "@swc/helpers": "0.4.14",
+    "autoprefixer": "10.4.13",
     "eslint": "8.30.0",
     "eslint-kit": "6.10.0",
+    "postcss": "8.4.20",
+    "tailwindcss": "3.2.4",
     "typescript": "4.9.4",
     "vitest": "0.26.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   }
 }
