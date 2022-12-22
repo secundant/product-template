@@ -4,61 +4,55 @@ tags:
   - library
 ---
 
-import { PackageManagersInstallSnippet } from '../../src/shared/ui';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # @my-org/ui
 
 Tailwind-based design system
 
-## Installation
+## Installation and setup
 
-### Install tailwind and peer deps
+```bash
+yarn add -D postcss autoprefixer tailwindcss @my-org/ui@'workspace:*'
+yarn dlx tailwindcss init
+```
 
-<PackageManagersInstallSnippet value="postcss autoprefixer tailwindcss" type="dev" />
+### Setup tailwind config
 
-### Define tailwind configuration
+You should extend tailwind configuration from `@my-org/ui`, its primary and required thing,
+all our design tokens are specified there.
 
-<Tabs>
-  <TabItem value="default" label="Default">
+Also, add `../../libs/ui/src/**/*.{ts,tsx}` to `content` option if you want use it inside monorepo (for development).
 
 ```javascript title="tailwind.config.js"
+const baseConfig = require('@my-org/ui/tailwind.config');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
-  theme: {
-    extend: {}
-  },
-  plugins: []
+  ...baseConfig,
+  content: ['./src/**/*.{ts,tsx}', '../../libs/ui/src/**/*.{ts,tsx}']
 };
 ```
 
-  </TabItem>
-  <TabItem value="monorepo" label="In monorepo">
+### Setup CSS
 
-```javascript title="tailwind.config.js"
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./src/**/*.{ts,tsx}', '../../libs/ui/src/**/*.{ts,tsx}'],
-  theme: {
-    extend: {}
-  },
-  plugins: []
-};
+```css
+/* tailwind already included here */
+@import '@my-org/ui/global.css';
 ```
-
-  </TabItem>
-</Tabs>
 
 ## Usage
 
-```jsx title="Simple usage"
-import { deduplicateAsync } from '@my-org/std';
+```tsx title="features/kek/ui.tsx"
+import { Button } from '@my-org/ui';
+import { $count, buttonClicked } from './model';
+import { useUnit } from 'effector-react';
 
-const fn = deduplicateAsync(async id => {
-  const res = await getData(id);
+export function Kek() {
+  const [count, handleClick] = useUnit([$count, buttonClicked]);
 
-  return { id, res };
-});
+  return (
+    <Button size="md" onClick={handleClick}>
+      count is {count}
+    </Button>
+  );
+}
 ```

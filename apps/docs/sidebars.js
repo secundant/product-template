@@ -2,9 +2,14 @@
 const sidebars = {
   libraries: [
     {
+      collapsible: false,
       type: 'category',
+      link: {
+        type: 'doc',
+        id: 'product-template/intro'
+      },
       label: 'About this template',
-      items: ['product-template/intro']
+      items: ['product-template/testing', 'product-template/how-to-deploy']
     },
     {
       type: 'category',
