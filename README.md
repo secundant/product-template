@@ -9,6 +9,9 @@
 
 > Project is in early development phase and contains some dirty moments
 
+[Visit our documentation](https://product-template.pages.dev/docs/product-template/intro) to get detailed information and
+see like-a-real-world example of [apps/docs](./apps/docs) in one 👏
+
 Our primary features:
 
 - [Yarn 3](https://yarnpkg.com/getting-started/usage) - most flexible package manager
@@ -46,7 +49,7 @@ Unfortunately, we still can't provide better way then just copy-paste one of lib
 1. Copy library and rename it
 2. Add path to tsconfig.base.json
 
-### Unit testing
+### Testing
 
 By default, unit tests is powered by [Vitest](https://vitest.dev/),
 in our [root package.json](./package.json) already added `vite` and `vite-tsconfig-paths`,
