@@ -18,6 +18,16 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'About this template',
+      items: ['product-template/intro']
+    },
+    {
+      type: 'category',
+      label: 'Guides',
+      items: ['intro']
+    },
+    {
+      type: 'category',
       label: 'Out libraries',
       items: [
         {
