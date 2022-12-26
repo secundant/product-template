@@ -9,7 +9,12 @@ const sidebars = {
         id: 'product-template/intro'
       },
       label: 'About this template',
-      items: ['product-template/testing', 'product-template/how-to-deploy']
+      items: [
+        'product-template/features',
+        'product-template/testing',
+        'product-template/monorepo',
+        'product-template/how-to-deploy'
+      ]
     },
     {
       type: 'category',
