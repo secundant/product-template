@@ -13,6 +13,7 @@ const sidebars = {
         'product-template/features',
         'product-template/testing',
         'product-template/monorepo',
+        'product-template/npm-publish',
         'product-template/how-to-deploy'
       ]
     },
