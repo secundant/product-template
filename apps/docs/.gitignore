@@ -1,6 +1,2 @@
-# Production
-/build
-
-# Generated files
-.docusaurus
-.cache-loader
+.vitepress/cache
+.vitepress/dist

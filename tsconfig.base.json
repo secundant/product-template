@@ -27,7 +27,7 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "noPropertyAccessFromIndexSignature": true,
-    "importsNotUsedAsValues": "error",
+    "verbatimModuleSyntax": true,
     "importHelpers": true,
     "sourceMap": false,
     "noErrorTruncation": false,

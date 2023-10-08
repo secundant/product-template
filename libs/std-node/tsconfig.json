@@ -1,8 +1,0 @@
-{
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "target": "es2021"
-  },
-  "include": ["**/*.ts"],
-  "exclude": ["dist", "node_modules"]
-}

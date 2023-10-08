@@ -1,5 +1,5 @@
-import { cva, VariantProps } from 'class-variance-authority';
-import { ForwardedRef, forwardRef, ReactNode } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { type ForwardedRef, forwardRef, type ReactNode } from 'react';
 
 export interface ButtonProps extends VariantProps<typeof buttonTheme> {
   className?: string;

@@ -9,22 +9,29 @@
 
 > Project is in early development phase and contains some dirty moments
 
-[Visit our documentation](https://product-template.pages.dev/docs/product-template/intro) to get detailed information and
+[Visit our documentation](https://product-template.pages.dev/repo/intro) to get detailed information and
 see like-a-real-world example of [apps/docs](./apps/docs) in one 👏
+
+## How to setup
+
+```shell
+corepack enable
+yarn
+```
 
 Our primary features:
 
-- [Yarn 3](https://yarnpkg.com/getting-started/usage) - most flexible package manager
-- Monorepo (This will be a separate section in the future)
+- [Yarn 4](https://yarnpkg.com/getting-started/usage) - flexible package manager
+- [Corepack](https://nodejs.org/api/corepack.html) for seamless package manager switching
+- Monorepo powered by [NX](https://nx.dev/)
   - Benefits
-    - Code structuring and easy reuse - we're able to extract all common logic
+    - Code structuring and easy reuse—we're able to extract all common logic
       to shared libraries and use it without any painful actions (build/publish/install/update/etc.)
     - Consistency
-    - Collaboration across team and tools
+    - Collaboration across a team and tools
   - Drawbacks
     - Requires common smart tools (NX/Turbo/etc.)
-    - Repository size - this is potential problem with scaling up (**TODO - research it**)
-  - Built-in task management powered by [NX](https://nx.dev/)
+    - Repository size—this is a potential problem with scaling up (**TODO - research it**)
 - **not implemented** Group of ready-to-use examples of UI Kit libraries (self-made / radix)
 - **not implemented** Multiple applications examples (NextJS / Vite / Razzel)
 - [Documentation application](./apps/docs) with its rationale, explanation and self-documented recipes

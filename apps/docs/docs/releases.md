@@ -1,6 +1,0 @@
----
----
-
-# My organization overall changelog
-
-...
