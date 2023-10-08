@@ -23,7 +23,9 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: |
+          corepack enable
+          yarn install --immutable
 
       - name: Run NX checks
         run: |

@@ -22,7 +22,9 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: |
+          corepack enable
+          yarn install --immutable
 
       - name: Create Release Pull Request or Publish to npm
         # https://github.com/changesets/action
