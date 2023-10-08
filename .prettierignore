@@ -1,7 +1,8 @@
-**/.next/**
-**/dist/**
-**/build/**
-**/tmp/**
+**/.next
+**/dist
+**/build
+**/tmp
 .pnp.js
 .yarn/
 node_modules/
+**/.vitepress/cache

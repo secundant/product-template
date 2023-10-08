@@ -29,8 +29,8 @@ module.exports = {
         'test',
         'translation',
         'security',
-        'changeset'
-      ]
-    ]
-  }
+        'changeset',
+      ],
+    ],
+  },
 };

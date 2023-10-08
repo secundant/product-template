@@ -2,7 +2,7 @@
 module.exports = {
   content: ['./**/*.tsx', './**/*.mdx'],
   theme: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };

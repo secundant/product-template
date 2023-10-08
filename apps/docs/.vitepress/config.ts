@@ -13,14 +13,14 @@ export default defineConfig({
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
     ['meta', { name: 'msapplication-TileColor', content: '#603cba' }],
     ['meta', { name: 'msapplication-config', content: '/browserconfig.xml' }],
-    ['meta', { name: 'theme-color', content: '#ffffff' }]
+    ['meta', { name: 'theme-color', content: '#ffffff' }],
   ],
   themeConfig: {
     logo: '/logo.png',
     socialLinks: [{ icon: 'github', link: 'https://github.com/secundant/product-template' }],
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023-present Dmitry Remezov'
+      copyright: 'Copyright © 2023-present Dmitry Remezov',
     },
     sidebar: [
       {
@@ -28,21 +28,21 @@ export default defineConfig({
         items: [
           {
             text: 'Introduction',
-            link: '/repo/intro'
+            link: '/repo/intro',
           },
           {
             text: 'Why monorepo?',
-            link: '/repo/why-monorepo'
+            link: '/repo/why-monorepo',
           },
           {
             text: 'Testing',
-            link: '/repo/testing'
+            link: '/repo/testing',
           },
           {
             text: 'Publishing',
-            link: '/repo/npm-publish'
-          }
-        ]
+            link: '/repo/npm-publish',
+          },
+        ],
       },
       {
         text: 'Applications',
@@ -53,29 +53,29 @@ export default defineConfig({
             items: [
               {
                 text: 'How to change favicon?',
-                link: '/apps/docs/change-favicon'
+                link: '/apps/docs/change-favicon',
               },
               {
                 text: 'How to deploy docs?',
-                link: '/apps/docs/deploy'
+                link: '/apps/docs/deploy',
               },
               {
                 text: 'Why do we need documentation app?',
-                link: '/apps/docs/why'
-              }
-            ]
-          }
-        ]
+                link: '/apps/docs/why',
+              },
+            ],
+          },
+        ],
       },
       {
         text: 'Libraries',
         items: [
           {
             text: '@my-org/ui',
-            link: '/libs/ui'
-          }
-        ]
-      }
-    ]
-  }
+            link: '/libs/ui',
+          },
+        ],
+      },
+    ],
+  },
 });

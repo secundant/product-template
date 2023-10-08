@@ -2,7 +2,7 @@ import { identity } from '../shared';
 
 export function deduplicateAsync<This, Args extends unknown[], Result, CacheKey = Args[0]>(
   originalFn: (this: This, ...args: Args) => Promise<Result>,
-  cacheKeyFn: (...args: Args) => CacheKey = identity as unknown as (...args: Args) => CacheKey
+  cacheKeyFn: (...args: Args) => CacheKey = identity as unknown as (...args: Args) => CacheKey,
 ) {
   const pending = new Map<CacheKey, Promise<Result>>();
 
@@ -14,7 +14,7 @@ export function deduplicateAsync<This, Args extends unknown[], Result, CacheKey 
     }
     pending.set(
       key,
-      originalFn.apply(this, args).finally(() => pending.delete(key))
+      originalFn.apply(this, args).finally(() => pending.delete(key)),
     );
     return pending.get(key)!;
   };

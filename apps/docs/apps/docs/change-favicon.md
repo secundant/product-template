@@ -23,8 +23,8 @@ export default defineConfig({
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
     ['meta', { name: 'msapplication-TileColor', content: '#603cba' }],
     ['meta', { name: 'msapplication-config', content: '/browserconfig.xml' }],
-    ['meta', { name: 'theme-color', content: '#ffffff' }]
-  ]
+    ['meta', { name: 'theme-color', content: '#ffffff' }],
+  ],
   // ...
 });
 ```

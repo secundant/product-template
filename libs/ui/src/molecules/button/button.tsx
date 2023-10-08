@@ -9,7 +9,7 @@ export interface ButtonProps extends VariantProps<typeof buttonTheme> {
 export const Button = forwardRef(
   (
     { className, size, color, appearance, ...props }: ButtonProps,
-    ref: ForwardedRef<HTMLButtonElement>
+    ref: ForwardedRef<HTMLButtonElement>,
   ) => (
     <button
       ref={ref}
@@ -17,11 +17,11 @@ export const Button = forwardRef(
         className,
         appearance,
         color,
-        size
+        size,
       })}
       {...props}
     />
-  )
+  ),
 );
 
 export const buttonTheme = cva(['flex items-center overflow-hidden'], {
@@ -29,32 +29,32 @@ export const buttonTheme = cva(['flex items-center overflow-hidden'], {
     size: {
       sm: 'p-2',
       md: 'p-3',
-      lg: 'p-4'
+      lg: 'p-4',
     },
     color: {
       primary: 'border-blue-500',
-      success: 'border-green-500'
+      success: 'border-green-500',
     },
     appearance: {
       filled: 'text-white',
-      outlined: 'border rounded-sm'
-    }
+      outlined: 'border rounded-sm',
+    },
   },
   defaultVariants: {
     size: 'sm',
     color: 'primary',
-    appearance: 'filled'
+    appearance: 'filled',
   },
   compoundVariants: [
     {
       color: 'primary',
       appearance: 'filled',
-      className: 'bg-blue-500'
+      className: 'bg-blue-500',
     },
     {
       color: 'success',
       appearance: 'filled',
-      className: 'bg-green-500'
-    }
-  ]
+      className: 'bg-green-500',
+    },
+  ],
 });
