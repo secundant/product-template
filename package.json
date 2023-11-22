@@ -53,8 +53,5 @@
     "vite": "5.0.2",
     "vite-tsconfig-paths": "4.2.1",
     "vitest": "0.34.6"
-  },
-  "resolutions": {
-    "vite": "4.4.11"
   }
 }
