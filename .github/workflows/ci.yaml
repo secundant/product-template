@@ -23,8 +23,6 @@ jobs:
         uses: ./.github/actions/yarn-install
 
       - uses: nrwl/nx-set-shas@v3
-      # This line is needed for nx affected to work when CI is running on a PR
-      - run: git branch --track main origin/main
 
       - name: Run NX checks
         run: |
