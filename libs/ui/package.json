@@ -1,7 +1,7 @@
 {
   "name": "@my-org/ui",
   "description": "My organization design system",
-  "packageManager": "yarn@4.0.0-rc.52",
+  "packageManager": "yarn@4.0.2",
   "version": "0.0.1",
   "source": "index.ts",
   "main": "dist/index.cjs",

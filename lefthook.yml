@@ -1,0 +1,19 @@
+pre-push:
+  commands:
+    validate:
+      run: yarn nx run-many -t typecheck,test,lint
+
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      glob: '*.{js,ts,jsx,tsx}'
+      run: yarn nx affected:lint --fix --files {staged_files}
+    prettier:
+      glob: '*.{js,ts,jsx,tsx,css,scss,md,json,yml}'
+      run: yarn nx format:write --files {staged_files}
+
+commit-msg:
+  commands:
+    'lint commit message':
+      run: yarn commitlint --edit {1}

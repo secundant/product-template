@@ -1,7 +1,7 @@
 {
   "name": "@my-org/std",
   "description": "Standard JS enhancements library",
-  "packageManager": "yarn@4.0.0-rc.52",
+  "packageManager": "yarn@4.0.2",
   "version": "0.0.1",
   "source": [
     "src/index.ts",
