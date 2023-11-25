@@ -12,38 +12,53 @@
 [Visit our documentation](https://product-template.pages.dev/repo/intro) to get detailed information and
 see like-a-real-world example of [apps/docs](./apps/docs) in one 👏
 
-## How to setup
+- [Yarn 4](https://yarnpkg.com/getting-started/usage), a flexible package manager
+- [Corepack](https://nodejs.org/api/corepack.html) for seamless package manager switching
+- Monorepo powered by [NX](https://nx.dev/)
+- [lefthook](https://github.com/evilmartians/lefthook/) for git hooks
+  - [commitlint](https://commitlint.js.org/) on commit-msg
+  - [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) on pre-commit
+  - Tests, type checking and linting on pre-push
+- [Vitest](https://vitest.dev/) for unit tests
+- Preconfigured [TypeScript](https://www.typescriptlang.org/) with strict rules
+- [Vitepress](https://vitepress.vuejs.org/) for [own documentation application](./apps/docs) with its rationale, explanation and self-documented recipes
+- **not implemented** Group of ready-to-use examples of UI Kit libraries (self-made / radix)
+- **not implemented** Multiple applications examples (NextJS / Vite / Razzel)
+
+## Setup
 
 ```shell
 corepack enable
 yarn
 ```
 
-Our primary features:
-
-- [Yarn 4](https://yarnpkg.com/getting-started/usage) - flexible package manager
-- [Corepack](https://nodejs.org/api/corepack.html) for seamless package manager switching
-- Monorepo powered by [NX](https://nx.dev/)
-  - Benefits
-    - Code structuring and easy reuse—we're able to extract all common logic
-      to shared libraries and use it without any painful actions (build/publish/install/update/etc.)
-    - Consistency
-    - Collaboration across a team and tools
-  - Drawbacks
-    - Requires common smart tools (NX/Turbo/etc.)
-    - Repository size—this is a potential problem with scaling up (**TODO - research it**)
-- **not implemented** Group of ready-to-use examples of UI Kit libraries (self-made / radix)
-- **not implemented** Multiple applications examples (NextJS / Vite / Razzel)
-- [Documentation application](./apps/docs) with its rationale, explanation and self-documented recipes
-
-## Included features
+## Details
 
 ### Preconfigured TypeScript
 
-[Global tsconfig.base.json](./tsconfig.base.json) is well designed
+[Global tsconfig.base.json](./tsconfig.base.json) is a well-designed
 configuration preset with strict rules and monorepo packages paths.
 It should be used in all modules in workspace for consistency purpose.
 Of course, you can reconfigure it as you wish :)
+
+### NX and monorepo
+
+#### Benefits
+
+- Cache
+- Consistency
+- Scalability
+- Shared anything (code, configs, tools, etc.)
+- Transparent **source code** relations
+  > It sounds not so important, but it changes the way you think about your code and significantly boosts your productivity in certain cases (it literally could be 1 day vs 30 minutes)
+- Zero overhead for new and existing projects
+- Code structuring and easy reuse—we're able to extract all common logic
+  to shared libraries and use it without any painful actions (build/publish/install/update/etc.)
+- Collaboration across a team and tools
+
+#### Drawbacks
+
+- Repository size—this is a potential problem with scaling up (**TODO - research it**)
 
 ## Development quick tips
 
