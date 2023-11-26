@@ -38,7 +38,6 @@
     "@changesets/cli": "2.26.2",
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-conventional": "18.4.3",
-    "@neodx/autobuild": "0.1.0",
     "eslint": "8.54.0",
     "eslint-kit": "10.6.0",
     "is-ci": "3.0.1",

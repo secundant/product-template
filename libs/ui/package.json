@@ -10,7 +10,7 @@
   "sideEffects": false,
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "autobuild",
+    "build": "tsc",
     "test": "vitest run",
     "lint": "eslint ."
   },
