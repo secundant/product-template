@@ -1,0 +1,7 @@
+{
+  "name": "@my-org/config",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "description": "Shared configuration",
+  "packageManager": "yarn@4.0.2"
+}

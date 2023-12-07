@@ -5,5 +5,8 @@ module.exports = configure({
   presets: [presets.node({}), presets.imports({}), presets.typescript({}), presets.prettier({})],
   extend: {
     ignorePatterns: ['!**/*', 'node_modules', 'dist'],
+    rules: {
+      'import/extensions': 'off',
+    },
   },
 });

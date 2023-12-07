@@ -1,0 +1,9 @@
+{
+  "name": "@my-org/react-ui",
+  "type": "commonjs",
+  "description": "My organization design system",
+  "packageManager": "yarn@4.0.2",
+  "dependencies": {
+    "@my-org/config": "*"
+  }
+}
