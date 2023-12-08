@@ -8,7 +8,7 @@ pre-commit:
   commands:
     eslint:
       glob: '*.{js,ts,jsx,tsx}'
-      run: yarn nx affected:lint --fix --files {staged_files}
+      run: yarn nx affected:lint -c ci --output-style stream --fix --quiet --files {staged_files}
     prettier:
       glob: '*.{js,ts,jsx,tsx,css,scss,md,json,yml}'
       run: yarn nx format:write --files {staged_files}

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "my-org",
+  "parallel": 3,
   "affected": {
     "defaultBase": "origin/main"
   },
@@ -8,40 +8,120 @@
     "libsDir": "libs",
     "appsDir": "apps"
   },
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["typecheck", "test", "lint", "^build"],
+      "cache": true,
+      "inputs": ["production", "^production"]
     },
-    "nx.json": "*",
-    ".eslintrc.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
+    "dev": {
+      "dependsOn": ["^build", "dev"],
+      "cache": false
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^default"],
+      "executor": "@nx/vite:test",
+      "dependsOn": ["typecheck", "^test"],
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "typecheck", "size"]
+        "passWithNoTests": true,
+        "reportsDirectory": "{workspaceRoot}/coverage/{projectRoot}"
+      }
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default"],
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx}"],
+        "reportUnusedDisableDirectives": "error"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "typecheck": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.json"
+      }
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "storybook": {
+      "cache": false,
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "{projectRoot}/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c {projectRoot}/.storybook --url=http://localhost:4400"
+      }
+    },
+    "build-storybook": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/{projectRoot}",
+        "configDir": "{projectRoot}/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "cache": true,
+      "inputs": ["default", "^production"]
+    }
+  },
+  "namedInputs": {
+    "globals": [
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/package.json"
+    ],
+    "default": ["{projectRoot}/**/*", "globals"],
+    "production": [
+      "default",
+      "!{projectRoot}/.eslintrc.[cm]?js",
+      "!{projectRoot}/tsconfig.(spec|test|storybook|e2e).json",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s",
+      "!{projectRoot}/README.md"
+    ]
+  },
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "babel": true
+      },
+      "library": {
+        "unitTestRunner": "vitest"
       }
     }
   },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["typecheck", "test", "lint", "^build"]
-    },
-    "dev": {
-      "dependsOn": ["^build", "dev"]
-    },
-    "test": {
-      "dependsOn": ["typecheck", "^test"],
-      "inputs": ["default", "^default"]
-    },
-    "lint": {
-      "inputs": ["default"]
-    }
-  },
-  "pluginsConfig": {
-    "@nrwl/js": {
-      "analyzeSourceFiles": false
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {}
     }
   }
 }

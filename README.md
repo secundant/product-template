@@ -86,6 +86,10 @@ So, if you want to add unit tests:
 
 Of course, you can change choose `jest` or something else instead of `vitest` if you want :)
 
+### CSS
+
+In all packages we use [TailwindCSS](https://tailwindcss.com/),
+
 ### Project graph
 
 This command will show a graph of the dependencies and tasks.
@@ -93,3 +97,14 @@ This command will show a graph of the dependencies and tasks.
 ```sh
 yarn nx graph
 ```
+
+### TODO Describe details
+
+- `tsconfig.base.json`
+- lefthook
+- Root-level package.json and no dependencies in packages
+- Docs
+- Tailwind
+- React-aria
+- Nx shared config
+-

@@ -1,14 +1,18 @@
 import { useObjectRef } from '@react-aria/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
-import type { ButtonHTMLAttributes } from 'react';
+import type { ReactNode } from 'react';
 import { forwardRef } from 'react';
-import { useButton } from 'react-aria';
+import { type AriaButtonOptions, useButton } from 'react-aria';
 import { mergeClasses } from '../shared/lib.ts';
 import { controlStyles } from '../shared/styles.ts';
 
 export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    Omit<VariantProps<typeof button>, 'disabled'> {}
+  extends Omit<AriaButtonOptions<'button'>, 'isDisabled'>,
+    Omit<VariantProps<typeof button>, 'disabled'> {
+  disabled?: boolean;
+  children?: ReactNode;
+  className?: string;
+}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ size, theme, className, children, disabled, ...props }, ref) => {

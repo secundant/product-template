@@ -1,13 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node", "vite/client"]
+    "lib": ["dom", "esnext"],
+    "types": ["vitest/globals", "vitest/importMeta", "vite/client", "node", "vitest"]
   },
-  "references": [
-    {
-      "path": "./tsconfig.test.json"
-    }
-  ],
-  "include": ["src", ".storybook"],
+  "include": ["src", "vite.config.ts", ".storybook"],
   "exclude": ["**/*.test.ts", "**/*.test.tsx"]
 }

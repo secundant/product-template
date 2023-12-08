@@ -24,7 +24,7 @@
 **/tsconfig.tsbuildinfo
 **/.eslintcache
 .cache/*
-.nx/*
+.nx/cache
 
 # Misc
 .DS_Store

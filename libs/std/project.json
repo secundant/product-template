@@ -1,15 +1,12 @@
 {
-  "name": "react-ui",
+  "name": "std",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/react-ui/src",
+  "sourceRoot": "libs/std/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "lint": {},
     "test": {},
-    "storybook": {},
-    "typecheck": {},
-    "test-storybook": {},
-    "build-storybook": {}
+    "typecheck": {}
   }
 }

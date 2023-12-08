@@ -3,37 +3,5 @@
   "description": "Standard JS enhancements library",
   "packageManager": "yarn@4.0.2",
   "version": "0.0.1",
-  "source": [
-    "src/index.ts",
-    "src/*/index.ts",
-    "src/node/*/index.ts"
-  ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "typecheck": "tsc --noEmit",
-    "clean": "yarn dlx rimraf dist",
-    "build": "tsc",
-    "test": "vitest run",
-    "lint": "eslint src"
-  },
-  "exports": {
-    "./node/fs": {
-      "types": "./dist/node/fs/index.d.ts",
-      "import": "./dist/node/fs/index.mjs",
-      "require": "./dist/node/fs/index.cjs"
-    },
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./async": {
-      "types": "./dist/async/index.d.ts",
-      "import": "./dist/async/index.mjs",
-      "require": "./dist/async/index.cjs"
-    }
-  }
+  "sideEffects": false
 }
