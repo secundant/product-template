@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
-    "types": ["vitest/globals", "vitest/importMeta", "vite/client", "vitest"]
+    "types": ["vite/client"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src", "vite.config.ts"]
 }

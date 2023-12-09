@@ -15,8 +15,28 @@
       "inputs": ["production", "^production"]
     },
     "dev": {
-      "dependsOn": ["^build", "dev"],
-      "cache": false
+      "cache": false,
+      "dependsOn": ["typecheck", "test", "lint", "^build", "dev"],
+      "executor": "@nx/vite:dev-server",
+      "options": {
+        "buildTarget": "{projectName}:build:development",
+        "hmr": true
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "options": {
+        "buildTarget": "{projectName}:build:production",
+        "hmr": false
+      }
+    },
+    "preview": {
+      "cache": false,
+      "executor": "@nx/vite:preview-server",
+      "options": {
+        "buildTarget": "{projectName}:build:production"
+      },
+      "dependsOn": ["typecheck", "test", "lint", "^build"]
     },
     "test": {
       "cache": true,
@@ -50,6 +70,25 @@
       "options": {
         "command": "tsc --noEmit -p {projectRoot}/tsconfig.json"
       }
+    },
+    "@nx/vite:build": {
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/{projectRoot}",
+        "configFile": "{projectRoot}/vite.config.ts",
+        "skipTypeCheck": true
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      },
+      "cache": true,
+      "inputs": ["default", "^production"]
     },
     "@nx/vite:test": {
       "cache": true,
