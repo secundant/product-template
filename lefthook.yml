@@ -1,7 +1,7 @@
 pre-push:
   commands:
     validate:
-      run: yarn nx run-many -t typecheck,test,lint
+      run: yarn nx run-many --output-style stream -t typecheck,test,lint
 
 pre-commit:
   parallel: true
